@@ -1,11 +1,10 @@
+// dependencies
 const path = require('path');
-
-module.exports = function(app) {
-    app.get('/', function(req, res) {
-        res.sendFile(path.join(_dirname, "/../public/index.html"));
-    });
-
-    app.get('/notes', function(req, res) {
-        res.sendFile(path.join(_dirname, "/../public/notes.html"))
-    });
+// routing
+module.exports = (app) => {
+  // creating routes
+  // GET /notes should return the notes.html file.
+  app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/notes.html'));
+  });
 };
